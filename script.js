@@ -26,7 +26,7 @@ function addProduct() {
     <input type='button' class='btn btn-outline-danger btn-sm mx-1 delete' value='Delete'></li>`
 
     //save these details to crud crud 
-    axios.post('https://crudcrud.com/api/17954f0144194e6aa318e72811334146/productsData', productDetails).then((response) => {
+    axios.post('https://crudcrud.com/api/fdf253f3cbb742daae61f5787a6c3cc7/productsData', productDetails).then((response) => {
 
         //after saving details to crud crud,show this product on screen too.
         if (productCategory == 'Electronics') {
@@ -54,7 +54,7 @@ window.addEventListener('DOMContentLoaded', getProductDataFromCrudCrud)
 
 function getProductDataFromCrudCrud(e) {
 
-    axios.get('https://crudcrud.com/api/17954f0144194e6aa318e72811334146/productsData')
+    axios.get('https://crudcrud.com/api/fdf253f3cbb742daae61f5787a6c3cc7/productsData')
         .then((response) => {
 
             let productDetails = response.data;
@@ -100,7 +100,7 @@ function deleteProduct(e) {
     if (e.target.classList.contains('delete')) {
 
         // delete corresponding product from crud crud 
-        axios.get('https://crudcrud.com/api/17954f0144194e6aa318e72811334146/productsData')
+        axios.get('https://crudcrud.com/api/fdf253f3cbb742daae61f5787a6c3cc7/productsData')
             .then((response) => {
                 let productDetails = response.data;
                 console.log('hi')
@@ -111,7 +111,7 @@ function deleteProduct(e) {
                     console.log(e.target.parentNode.firstChild.textContent)
                     if (e.target.parentNode.firstChild.textContent.includes(itemDetails)) {
                         let id = item._id;
-                        axios.delete(`https://crudcrud.com/api/17954f0144194e6aa318e72811334146/productsData/${id}`).then((response) => {
+                        axios.delete(`https://crudcrud.com/api/fdf253f3cbb742daae61f5787a6c3cc7/productsData/${id}`).then((response) => {
                             // delete product from user screen also 
                             e.target.parentNode.remove();
                         })
